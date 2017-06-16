@@ -1,0 +1,66 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+    "_version": "1.1.0",
+    "id": "com.raprins.movies",
+    "type": "application",
+    "title": "Advanced Tutorial",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5"
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "rootView": {
+      "viewName": "com.raprins.movies.view.PageContainer",
+      "type": "XML"
+    },
+    "resources":{
+    	"css": [
+    		{
+    			"uri": "css/movie.css",
+                 "id": "movie"
+    		}
+    	]
+    },
+    "dependencies": {
+      "minUI5Version": "1.30",
+      "libs": {
+        "sap.m": {}
+      }
+    },
+	"models" : {
+		
+		"countries":{
+			"type": "sap.ui.model.json.JSONModel",
+			"uri": "http://services.groupkt.com/country/get/all"
+		}
+	},
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.raprins.movies.view",
+        "controlId": "pageContainer"
+       },
+      "routes": [
+        {
+          "pattern"	: "",
+          "name"	: "home",
+          "target"	:  "homeTarget"
+        }
+        
+      ],
+      "targets": {
+        "homeTarget": {
+          "viewName": "Home",
+          "controlAggregation": "pages"
+        }
+      }
+    }
+  }
+}

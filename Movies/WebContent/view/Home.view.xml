@@ -1,0 +1,21 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	xmlns:raprins="com.raprins.movies.libraries"
+	controllerName="com.raprins.movies.view.Home" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Movies">
+		<content>
+			<raprins:MovieTileContainer id="idMovieContainer">
+				<raprins:items>
+				<!-- 
+					<raprins:MovieTile id="id1" title="Test" source="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwMTk3NTM4Ml5BMl5BanBnXkFtZTcwMDYzNjk0MQ@@._V1_SX300.jpg"/>
+					<raprins:MovieTile id="id2" title="Pipo" source="https://images-na.ssl-images-amazon.com/images/M/MV5BNjU5NjM1MWEtYTBhOS00ZWJmLWI5NmQtMjhkMjc1OGMwMzhhXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg"/>
+				 -->
+				 
+				</raprins:items>
+			</raprins:MovieTileContainer>
+		</content>
+	</Page>
+</mvc:View>
