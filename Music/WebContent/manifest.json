@@ -42,6 +42,7 @@
 				"viewType": "XML",
 				"viewPath": "com.raprins.music.view",
 				"controlId": "mainPageContainer",
+				"controlAggregation" : "pages",
 				"transition": "slide"
 			},
 			"routes": [
