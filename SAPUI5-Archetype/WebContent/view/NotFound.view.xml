@@ -1,0 +1,12 @@
+<mvc:View
+   controllerName="com.raprins.archetype.controller.NotFound"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <MessagePage
+      title="Page introvable"
+      text="Page introuvable text"
+      description="Page introuvable description"
+      showNavButton="true"
+		navButtonPress="onNavigationBack"
+      />
+</mvc:View>
