@@ -3,9 +3,13 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Home">
 		<content>
-			<List>
+			<List id="idListMusic" 
+			    items="{
+			    	path : 'musics>/results/'	
+			    }"
+			    >
 			    <items>
-			        <StandardListItem title="Test"/>
+			        <StandardListItem title="{musics>trackName}"/>
 			    </items>
 			</List>
 		</content>
