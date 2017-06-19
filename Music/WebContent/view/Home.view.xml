@@ -8,8 +8,22 @@
 			    	path : 'musics>/results/'
 			    }"
 			    >
+			    <headerToolbar>
+			        <Toolbar>
+			            <content>
+			                <SearchField id="idSearchField" search="onSearchMusic"/>
+			            </content>
+			        </Toolbar>
+			    </headerToolbar>
 			    <items>
-			        <StandardListItem title="{musics>trackName}"/>
+			        <StandardListItem 
+			            class="musicListItem"
+			            press="navToMusicDetail"
+			            type="Navigation"
+			            title="{musics>trackName}"
+			            icon="{musics>artworkUrl60}"
+			            description="{musics>collectionName}"/>
+			      
 			    </items>
 			</List>
 		</content>

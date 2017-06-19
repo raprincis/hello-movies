@@ -1,0 +1,18 @@
+.musicText {
+	font-family: "Calibri";
+}
+
+.musicListItem {
+	border : solid thin #9fb9c6;
+	border-radius: 2px;
+}
+
+.musicListItem:hover {
+	background-color : #9fb9c6;
+}
+
+.detail {
+	background: url("../images/musics.jpg") no-repeat;
+}
+
+

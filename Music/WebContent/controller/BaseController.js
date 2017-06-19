@@ -3,9 +3,13 @@ sap.ui.define([
 	"sap/ui/core/routing/History"
 ], function (Controller, History) {
 	"use strict";
+	
+	//Load Once
+	var oModel = new sap.ui.model.json.JSONModel();
+	
 	return Controller.extend("com.raprins.music.controller.BaseController", {
 		/**
-		 * getRouter : 
+		 * getRouter 
 		 */
 		getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
@@ -31,7 +35,11 @@ sap.ui.define([
 			
 			return this.getOwnerComponent().getModel("defaultConfig");
 			
+		},
+		
+		
+		getMusicModel : function(){
+			return oModel;
 		}
-				
 	});
 });

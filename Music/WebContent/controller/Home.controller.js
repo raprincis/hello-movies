@@ -6,27 +6,56 @@ sap.ui.define([
 	
 	return Controller.extend("com.raprins.music.controller.Home", {
 		/**
-		 * Init
+		 * Initialisation du Controller
 		 */
 		onInit: function () {
 			
+			//Get Default Config
 			var oDefaultConfigData = this.getDefaultConfig().getData();
-			this.oModelMusics = new JSONModel();
-			this.oModelMusics.attachRequestCompleted(this._onDataCompleted());
-			this.oModelMusics.loadData(this._getPreparedRequest(oDefaultConfigData.searchTerm));
+			
+			//Declare Once : event handler
+			this.getMusicModel().attachRequestCompleted(this._onDataCompleted());
+
+			//Raise default search on initialisation			
+			var oSearchField = this.getView().byId("idSearchField");
+			oSearchField.setValue(oDefaultConfigData.searchTerm);
+			oSearchField.fireSearch();
 		},
-		
 		
 		/**
-		 * Fetch Data 
+		 * Navigation vers Detail
 		 */
-		_onDataCompleted : function(){
-			this.getView().setModel(this.oModelMusics, "musics");
+		navToMusicDetail : function(oEvent){
+			
+			//Remonter à l'envoyeur : ListItem
+			var oEventSource = oEvent.getSource();
+			var sPath = oEventSource.getBindingContext("musics").sPath;
+			
+			//Forme : '/results/{indexOf}'
+			var indexMusic = sPath.substr(sPath.lastIndexOf("/") + 1);
+			this.getRouter().navTo("detail", { idMusic : indexMusic } );
 		},
 		
-		
-		_getPreparedRequest : function(sSearchTerm){
+		/**
+		 * SearchMusic : Handle search field
+		 */
+		onSearchMusic : function(oEvent){
 			
+			var oSearchField = oEvent.getSource();
+			this.getMusicModel().loadData(this._getPreparedRequest(oSearchField.getValue()));
+		},
+		
+		/**
+		 * 
+		 */
+		_onDataCompleted : function(){
+			this.getView().setModel(this.getMusicModel(), "musics");
+		},
+		
+		/**
+		 * Préparer la requête
+		 */
+		_getPreparedRequest : function(sSearchTerm){
 			if (sSearchTerm){
 				return "https://itunes.apple.com/search?term=" + sSearchTerm +"&media=music&entity=song";
 			}
