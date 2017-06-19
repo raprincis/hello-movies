@@ -10,10 +10,10 @@ sap.ui.define([
 		 */
 		onInit: function () {
 			
+			var oDefaultConfigData = this.getDefaultConfig().getData();
 			this.oModelMusics = new JSONModel();
 			this.oModelMusics.attachRequestCompleted(this._onDataCompleted());
-			
-			this.oModelMusics.loadData("https://itunes.apple.com/search?term=a");
+			this.oModelMusics.loadData(this._getPreparedRequest(oDefaultConfigData.searchTerm));
 		},
 		
 		
@@ -21,9 +21,15 @@ sap.ui.define([
 		 * Fetch Data 
 		 */
 		_onDataCompleted : function(){
-			
 			this.getView().setModel(this.oModelMusics, "musics");
+		},
+		
+		
+		_getPreparedRequest : function(sSearchTerm){
 			
+			if (sSearchTerm){
+				return "https://itunes.apple.com/search?term=" + sSearchTerm +"&media=music&entity=song";
+			}
 		}
 	});
 });

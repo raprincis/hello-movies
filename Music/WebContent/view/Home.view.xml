@@ -5,7 +5,7 @@
 		<content>
 			<List id="idListMusic" 
 			    items="{
-			    	path : 'musics>/results/'	
+			    	path : 'musics>/results/'
 			    }"
 			    >
 			    <items>

@@ -24,6 +24,14 @@ sap.ui.define([
 			} else {
 				this.getRouter().navTo("home", {}, true);
 			}
+		},
+		
+		
+		getDefaultConfig : function() {
+			
+			return this.getOwnerComponent().getModel("defaultConfig");
+			
 		}
+				
 	});
 });

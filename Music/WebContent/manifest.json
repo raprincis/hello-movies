@@ -55,9 +55,26 @@
 			"targets": {
 				"home": {
 					"viewName": "Home",
+					"controlAggregation":"masterPages",
 					"viewLevel": 1
 				}
 			}
+		},
+		"models": {
+			"defaultConfig" : {
+				"type" : "sap.ui.model.json.JSONModel",
+				"settings" : {
+					"searchTerm" : "Metallica"
+				}
+			}
+		
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/custom.css"
+				}
+			]
 		}
 	}
 }
