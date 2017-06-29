@@ -1,0 +1,62 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="com.raprins.custom.controls.controller.Home"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<Page title="{i18n>page.home.title}"  class="blackboard">
+		<content>
+			<HBox>
+			     
+			    <VBox class="status-container">
+			        <Text class="swimlaneTitle" text="To Do"/>
+					<List id="idToDo" class="swimlane"
+					    items="{ 
+				    	path : 'toDo>/'
+				    }">	
+						<items>
+						    <CustomListItem type="Active" class="postit">
+								<content>
+								    <Text class="pin"/>
+								    <Text class="text-id" text="{toDo>id}" />
+								    <Text class="text-description" text="{toDo>titre}" />
+								</content>
+							</CustomListItem>
+						</items>
+					</List>
+				</VBox>
+				<VBox class="status-container">
+				    <Text  class="swimlaneTitle" text="On Progress"/>
+					<List id="idProgress"  class="swimlane"  items="{ 
+				    	path : 'progress>/'
+				    }">
+						<items>
+							<CustomListItem type="Active" class="postit process">
+								<content>
+								    <Text class="pin"/>
+								    <Text class="text-id" text="{progress>id}" />
+								    <Text class="text-description" text="{progress>titre}" />
+								</content>
+							</CustomListItem>
+						</items>
+					</List>
+				</VBox>
+				<VBox class="status-container">
+				    <Text  class="swimlaneTitle" text="Done"/>
+					<List id="idDone"  class="swimlane"  items="{ 
+				    	path : 'done>/'
+				    }">
+						<items>
+							<CustomListItem type="Active" class="postit done">
+								<content>
+								    <Text class="pin"/>
+								    <Text class="text-id" text="{done>id}" />
+								    <Text class="text-description" text="{done>titre}" />
+								</content>
+							</CustomListItem>
+						</items>
+					</List>
+				</VBox>
+				 
+			</HBox>
+		</content>
+	</Page>
+</mvc:View>
