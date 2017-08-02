@@ -1,0 +1,13 @@
+<mvc:View 
+		xmlns:core="sap.ui.core" 
+		xmlns:mvc="sap.ui.core.mvc" 
+		xmlns="sap.m"
+		controllerName="com.raprins.ui5.offline.controller.Home" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+		
+	<Page title="Hello Offline">
+		<content>
+	
+		</content>
+	</Page>
+</mvc:View>
