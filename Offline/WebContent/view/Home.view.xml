@@ -11,7 +11,7 @@
 				<headerToolbar>
 				    <OverflowToolbar>
 				        <ToolbarSpacer/>
-				        <OverflowToolbarButton type="Transparent" icon="sap-icon://add" press="onAddPersonne"/>
+				        <OverflowToolbarButton type="Transparent" icon="sap-icon://add"  press="onAddPersonne"/>
 				        <OverflowToolbarButton type="Transparent" icon="sap-icon://edit" press="onAddPersonne"/>
 				    </OverflowToolbar>
 				</headerToolbar>

@@ -14,7 +14,7 @@
 					<f:content>
 						<Label text="Prénom" />
 						<Input value="{personForm>/firstname}" />
-						<Label text="Nom" />
+						<Label text="Nom"/>
 						<Input value="{personForm>/lastname}" />
 						<Label text="Date de Naissance" />
 						<DatePicker valueFormat="dd/MM/yyyy" value="{personForm>/birthdate}"/>

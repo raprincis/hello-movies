@@ -9,6 +9,7 @@ sap.ui.define(["sap/ui/base/EventProvider"],
 	var oNetworkManager = EventProvider.extend("com.raprins.ui5.offline.model.NetworkManager", {
 		
 		constructor : function(oData, bObserve){
+			
 			//Superclass constructor
 			EventProvider.prototype.constructor.apply(this, arguments);
 			this._initCustomEvent(oCustomEvent.connectionChanged);

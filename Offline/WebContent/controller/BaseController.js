@@ -7,6 +7,7 @@ sap.ui.define([
 	return Controller.extend("com.raprins.ui5.offline.controller.BaseController", {
 		getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
+			
 		},
 		
 		

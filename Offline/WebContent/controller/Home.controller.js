@@ -10,6 +10,7 @@ sap.ui.define([
 			this.oPersonModel = new sap.ui.model.json.JSONModel();
 			this.getModel().attachDataChanged(this._onDataChanged.bind(this));
 			this.getView().setModel(this.getModel(),"personnes");
+			
 		},
 		
 		onAddPersonne : function(oEvent){
