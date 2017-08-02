@@ -1,0 +1,32 @@
+<core:FragmentDefinition 	
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog showHeader="false">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm editable="true"
+					layout="ResponsiveGridLayout" title="Personne" labelSpanXL="3"
+					labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+					emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+					columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<Label text="Prénom" />
+						<Input value="{personForm>/firstname}" />
+						<Label text="Nom" />
+						<Input value="{personForm>/lastname}" />
+						<Label text="Date de Naissance" />
+						<DatePicker valueFormat="dd/MM/yyyy" value="{personForm>/birthdate}"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button icon="sap-icon://save" press="onSavePersonne" />
+		</beginButton>
+		<endButton>
+			<Button icon="sap-icon://cancel" press="onClosePersonForm" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

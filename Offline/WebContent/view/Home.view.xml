@@ -1,13 +1,42 @@
-<mvc:View 
-		xmlns:core="sap.ui.core" 
-		xmlns:mvc="sap.ui.core.mvc" 
-		xmlns="sap.m"
-		controllerName="com.raprins.ui5.offline.controller.Home" 
-		xmlns:html="http://www.w3.org/1999/xhtml">
-		
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="com.raprins.ui5.offline.controller.Home"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
 	<Page title="Hello Offline">
 		<content>
-	
+			<Table id="idPersonnesTable" inset="false" mode="MultiSelect"
+				items="{
+					path: 'personnes>/'
+				}">
+				<headerToolbar>
+				    <OverflowToolbar>
+				        <ToolbarSpacer/>
+				        <OverflowToolbarButton type="Transparent" icon="sap-icon://add" press="onAddPersonne"/>
+				        <OverflowToolbarButton type="Transparent" icon="sap-icon://edit" press="onAddPersonne"/>
+				    </OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Nom" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Prenom" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Date de Naissance" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+						    
+							<ObjectIdentifier title="{personnes>lastname}" text="{personnes>id}" />
+							<Text text="{personnes>firstname}" />
+							<Text text="{personnes>birthdate}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
 		</content>
 	</Page>
 </mvc:View>
