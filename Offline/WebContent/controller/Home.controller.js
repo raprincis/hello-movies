@@ -1,14 +1,15 @@
 sap.ui.define([
 	"com/raprins/ui5/offline/controller/BaseController",
-	"sap/m/Dialog"
-], function (BaseController, Dialog) {
+	"sap/m/Dialog",
+	"sap/m/MessageToast"
+], function (BaseController, Dialog, MessageToast) {
 	"use strict";
 	return BaseController.extend("com.raprins.ui5.offline.controller.Home", {
 		onInit: function () {
-			
-			this.getModel().setData([]);
+			this.getModel().loadData("/sap/bc/rest/personnes?sap-client=100");
 			this.oPersonModel = new sap.ui.model.json.JSONModel();
-			this.getModel().attachDataChanged(this._onDataChanged.bind(this));
+			this.getModel().attachDataChanged(this._onDataChanged.bind(this));//attachErrorRaised
+			this.getModel().attachErrorRaised(this._onErrorRaised.bind(this));//
 			this.getView().setModel(this.getModel(),"personnes");
 			
 		},
@@ -19,6 +20,13 @@ sap.ui.define([
 			oPersonFormDialog.setModel(this.oPersonModel,"personForm");
 			oPersonFormDialog.open();
 		
+		},
+		
+		_onErrorRaised : function(oEvent){
+			
+			MessageToast.show("Erreur de Je ne sais pas quoi");
+			
+			
 		},
 		
 		_onDataChanged : function(oEvent){
