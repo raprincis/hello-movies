@@ -86,7 +86,7 @@
 			],
 			"js":[
 				{
-					"uri" : "libraries/lodash.core.js"
+					"uri" : "libraries/lodash.js"
 				}
 			]
 		}

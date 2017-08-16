@@ -1,6 +1,8 @@
+/* global _:true */ //Define Lodash underscore globally 
 sap.ui.define([
-   "sap/ui/core/UIComponent"
-], function (UIComponent) {
+   "sap/ui/core/UIComponent",
+   "com/raprins/archetype/libraries/lodash"
+], function (UIComponent, _) {
    "use strict";
    return UIComponent.extend("com.raprins.archetype.Component", {
 	   
